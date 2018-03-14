@@ -1,0 +1,19 @@
+{
+  "name": "constructor-hangman",
+  "version": "1.0.0",
+  "description": "command line hangman game using constructors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biancanoel/constructor-hangman.git"
+  },
+  "author": "Bianca Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biancanoel/constructor-hangman/issues"
+  },
+  "homepage": "https://github.com/biancanoel/constructor-hangman#readme"
+}

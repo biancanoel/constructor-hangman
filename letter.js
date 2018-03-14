@@ -13,22 +13,18 @@ function Letter (letter) {
             return false;
         }
     };
-    this.show = function () {
+    this.toString = function () {
         if (this.guessed) {
-            console.log(this.letter);
+            //console.log(this.letter);
             return this.letter;
         } else {
-            console.log(" _ ");
+            //console.log(" _ ");
             return " _ ";
         }
     }
 }
 
-var c = new Letter ("c");
-//console.log(c);
-c.check("k");
-c.show();
 
-module.export = {
-    letter: Letter
-}
+
+
+module.exports = Letter;
