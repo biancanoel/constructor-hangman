@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/biancanoel/constructor-hangman/issues"
   },
-  "homepage": "https://github.com/biancanoel/constructor-hangman#readme"
+  "homepage": "https://github.com/biancanoel/constructor-hangman#readme",
+  "dependencies": {
+    "inquirer": "^5.1.0"
+  }
 }
