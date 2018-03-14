@@ -13,13 +13,13 @@ function nextWord() {
     //Select word from array and then remove it from array
     var randy = Math.floor(Math.random() * possibleWords.length);
     currentWord = possibleWords[randy];
-    console.log(`the curent word is ${currentWord}`)
+    //console.log(`the curent word is ${currentWord}`)
     possibleWords.splice(randy, 1);
     //console.log(possibleWords);
 
     //Create new word object
     word = new Word(currentWord);
-    console.log(word);
+    //console.log(word);
     //Make an array of objects (1 object for each letter of the word)
     word.makeLetterArray();
     //Dispplay word as either _ or letter to user (depending on if guessed or not yet)
@@ -47,7 +47,6 @@ function nextGuess() {
             console.log("sorry game over! you are out of turns. The word was " + currentWord);
         } else { 
             var unGuessedLetters = word.letterArray.filter(word => word.guessed === false);
-            console.log(`You have this many letters left to guess: ${unGuessedLetters.length}`);
 
             if (unGuessedLetters.length === 0) {
                 console.log("you have guessed the word");

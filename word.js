@@ -12,7 +12,7 @@ function Word(word) {
         for (var i = 0; i < this.word.length; i++) {
             this.letterArray.push(new Letter(this.word[i]));
         };
-        console.log(this.letterArray);
+        //console.log(this.letterArray);
     };
     //check each item in letter array to see if guess was made
     this.guessed = function (guess) {
@@ -24,10 +24,10 @@ function Word(word) {
             };
         }
         if (counter > 0) {
-            console.log("dont remove a guess")
+            console.log("Correct!")
         } else {
             this.guesses--;
-            console.log(`${this.guesses} guesses remaining, we removed a guess`);
+            console.log(`Wrong gues, ${this.guesses} guesses remaining.`);
 
         }
 
@@ -37,10 +37,11 @@ function Word(word) {
 
     //display string represenging word (_ or letter depending on if guessed or not)
     this.display = function () {
-        var showString;
+        var showString="";
         for (i = 0; i < this.letterArray.length; i++) {
             showString += " " + this.letterArray[i].toString();
         };
+        console.log("Make a guess!");
         console.log(showString);
 
     };
