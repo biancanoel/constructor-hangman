@@ -2,14 +2,18 @@ var Word = require("./word.js");
 var inquirer = require("inquirer");
 
 //Array of words which are possible 'current words. Wins and losses set to 0.
-var possibleWords = ["Brussels", "Cordoba", "Encinitas", "Barcelona", "Kingston", "Whistler", "Honolulu", "Temecula", "Lagos", "Portland"];
+var possibleWords = ["brussels", "cordoba", "encinitas", "barcelona", "kingston", "whistler", "honolulu", "temecula", "lagos", "portland"];
 
 //When page starts, the nextWord function will pick a word, remove that word from the possible words array, and display that word as string to user with _ . # of guesses set to 10. 
 var word;   
-var currentWord
+var currentWord;
+var wins=0;
+var losses=0;
 nextWord();
 
 function nextWord() {
+
+    if (possibleWords.length> 0) {
     //Select word from array and then remove it from array
     var randy = Math.floor(Math.random() * possibleWords.length);
     currentWord = possibleWords[randy];
@@ -19,12 +23,14 @@ function nextWord() {
 
     //Create new word object
     word = new Word(currentWord);
-    //console.log(word);
     //Make an array of objects (1 object for each letter of the word)
     word.makeLetterArray();
-    //Dispplay word as either _ or letter to user (depending on if guessed or not yet)
+    //Display word as "_" to user
     word.display();
     nextGuess(word);
+    } else {
+        console.log(`You have played all words in the game. GAME OVER! WINS: ${wins} LOSSES: ${losses}`);
+    }
 }
 
 
@@ -44,12 +50,18 @@ function nextGuess() {
 
         //check if game is over. 
         if (word.guesses < 1) { //Lose: Out of turns. 
+            console.log("------------");
             console.log("sorry game over! you are out of turns. The word was " + currentWord);
+            losses++;
+            nextWord();
         } else { 
             var unGuessedLetters = word.letterArray.filter(word => word.guessed === false);
 
             if (unGuessedLetters.length === 0) {
-                console.log("you have guessed the word");
+                console.log("------------");
+                console.log("You guessed the word!");
+                wins++;
+                nextWord();
 
             } else {
                 nextGuess();

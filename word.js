@@ -25,9 +25,11 @@ function Word(word) {
         }
         if (counter > 0) {
             console.log("Correct!")
+            console.log("-------------");
         } else {
             this.guesses--;
-            console.log(`Wrong gues, ${this.guesses} guesses remaining.`);
+            console.log(`Wrong guess, ${this.guesses} guesses remaining.`);
+            console.log("-------------")
 
         }
 
